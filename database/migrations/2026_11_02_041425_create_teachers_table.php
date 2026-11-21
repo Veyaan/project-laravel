@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->bigInteger('niy');
+            $table->string('niy');
             //$table->string('subjects');
             $table->foreignId('subject_id')->constrained()->unique();
             $table->date('start_date');

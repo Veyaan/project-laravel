@@ -9,10 +9,10 @@ class AboutController extends Controller
     public function index()
     {
         $data = [
-            'title' => 'About Me',
-            'nama' => 'Dzakiy Denendra',
-            'hobi' => 'Bermain game kompetitif dan traveling',
-            'repository' => 'https://github.com/dzakz3000?tab=repositories'
+            'title' => 'About',
+            'nama' => 'Favian Alden Sulistyo',
+            'hobi' => 'Berkendara, dan mendengarkan musik',
+            'repository' => 'https://github.com/Veyaan?tab=repositories'
         ];
 
         return view('admin.about', $data);

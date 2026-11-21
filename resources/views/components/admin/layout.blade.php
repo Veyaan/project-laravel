@@ -6,8 +6,8 @@
     @vite('resources/css/app.css')
     <title>Document</title>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900">
-    <div class="antialiased bg-gray-50 dark:bg-gray-900">
+<body class="min-h-screen bg-gray-900">
+    <div class="min-h-screen antialiased bg-gray-900">
     <!-- Navbar -->
     <x-admin.navbar/>
 
@@ -16,7 +16,7 @@
     <x-admin.sidebar/>
 
     <!-- Main content -->
-    <main class="p-4 md:ml-64 h-auto pt-20">
+    <main class="min-h-screen p-4 md:ml-64 pt-20 bg-gray-900">
         <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
             {{ $slot }}
         </div>

@@ -35,11 +35,14 @@
                     </form>
                 </div>
                 <div class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
-                    <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <select>
                         <option value="">--Semua Kelas--</option>
-                        <option value="11 PPLG 1">11 PPLG 1</option>
-                        <option value="11 PPLG 2">11 PPLG 2</option>
-                        <option value="11 PPLG 3">11 PPLG 3</option>
+
+                        @foreach ($classrooms as $classroom)
+                            <option value="{{ $classroom->id }}">
+                                {{ $classroom->name }}
+                            </option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -114,10 +117,18 @@
                         </div>
                         <div>
                             <label for="kelas" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kelas</label>
-                            <select id="kelas" name="kelas" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
-                                <option value="1">11 PPLG 1</option>
-                                <option value="2">11 PPLG 2</option>
-                                <option value="3">11 PPLG 3</option>
+                            <select id="kelas" name="kelas"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                                required>
+
+                                <option value="" disabled selected>Pilih kelas</option>
+
+                                @foreach ($classrooms as $classroom)
+                                        <option value="{{ $classroom->id }}">
+                                        {{ $classroom->name }}
+                                    </option>
+                                @endforeach
+
                             </select>
                         </div>
                         <div>

@@ -11,7 +11,7 @@ class TeacherController extends Controller
     public function index()
     {
         $teachers = Teacher::with('subject')->get();
-        $subjects = Subject::all();
+        $subjects = Subject::whereDoesntHave('teacher')->get();
 
         return view('admin.teacher.index', compact('teachers', 'subjects'));
     }
@@ -21,7 +21,7 @@ class TeacherController extends Controller
         $validated = $request->validate([
             'name'       => 'required|string|max:255',
             'niy'        => 'required|string|max:255',
-            'subject_id' => 'required|exists:subjects,id',
+            'subject_id' => 'required|exists:subjects,id|unique:teachers,subject_id',
             'start_date' => 'required|date',
         ]);
 
