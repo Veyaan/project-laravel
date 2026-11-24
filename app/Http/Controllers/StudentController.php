@@ -20,7 +20,7 @@ class StudentController extends Controller
     {
     $request->validate([
         'nis' => 'required|string|max:20|unique:students,nis',
-        'nama' => 'required|string|max:255',
+        'nama' => 'required|string|max:255|unique:students,nama',
         'kelas' => 'required|exists:classrooms,id',
         'alamat' => 'nullable|string|max:255',
         ]);

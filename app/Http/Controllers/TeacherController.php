@@ -19,7 +19,7 @@ class TeacherController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name'       => 'required|string|max:255',
+            'nama' => 'required|string|max:255|unique:teachers,nama',
             'niy'        => 'required|string|max:255',
             'subject_id' => 'required|exists:subjects,id|unique:teachers,subject_id',
             'start_date' => 'required|date',

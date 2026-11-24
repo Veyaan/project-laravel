@@ -37,9 +37,9 @@ class StudentSeeder extends Seeder
             )->firstOrFail();
 
             Student::firstOrCreate(
-                ['nis' => $student['nis']],
+                ['name' => $student['name']],
                 [
-                    'name' => $student['name'],
+                    'nis' => $student['nis'],
                     'classroom_id' => $classroom->id,
                     'address' => $student['address'],
                     'major' => $classroom->major,

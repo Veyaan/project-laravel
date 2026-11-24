@@ -14,7 +14,7 @@ class TeacherSeeder extends Seeder
             [
                 'name' => 'Pak Ahmad',
                 'niy' => '20001',
-                'subject' => 'Matematika',
+                'subject' => 'Mobile Dev',
                 'start_date' => '2020-07-01',
             ],
             [
@@ -26,7 +26,7 @@ class TeacherSeeder extends Seeder
             [
                 'name' => 'Pak Budi',
                 'niy' => '20003',
-                'subject' => 'Bahasa Inggris',
+                'subject' => 'Bahasa Jepang',
                 'start_date' => '2022-07-01',
             ],
         ];
@@ -37,9 +37,9 @@ class TeacherSeeder extends Seeder
             )->firstOrFail();
 
             Teacher::firstOrCreate(
-                ['niy' => $teacher['niy']],
+                ['name' => $teacher['name']],
                 [
-                    'name' => $teacher['name'],
+                    'niy' => $teacher['niy'],
                     'subject_id' => $subject->id,
                     'start_date' => $teacher['start_date'],
                 ]
